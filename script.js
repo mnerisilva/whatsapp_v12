@@ -280,7 +280,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
             }, 8000);
             // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
-                    setTimeout(() => { // executa este bloco a partir do segundo 9 - BLOCO ATRELADO À PERGUNTA 1
+                    setTimeout(() => { // executa este bloco a partir do segundo 9000 - BLOCO ATRELADO À PERGUNTA 1
                         const listenerPergunta1 = main.querySelectorAll('.enunciado')
                         listenerPergunta1.forEach( item => {
                             item.addEventListener('click', function(e){
@@ -333,7 +333,17 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                         pergunta1.appendChild(svgSpinner)
                                         main.appendChild(pergunta2)     
                                         main.scrollTop += 1300;
-                                        rightImg.src = "assets/chefe-idle.gif" // para personagem  
+                                        rightImg.src = "assets/chefe-idle.gif" // para personagem
+                                        
+                                        
+                                        const listenerPergunta2 = main.querySelectorAll('.enunciado')
+                                        listenerPergunta2.forEach( item => {
+                                            item.addEventListener('click', function(e){
+                                                console.log(`Cliquei na alternativa: ${e.target.dataset.alternativa}`)
+                                                e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                            })
+                                        })
+
                                     }, 4000);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 

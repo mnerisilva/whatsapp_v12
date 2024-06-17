@@ -337,7 +337,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                         
                                         
                                         const listenerPergunta2 = main.querySelectorAll('.enunciado')
-                                        listenerPergunta2.forEach( item => {
+                                        listenerPergunta2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
                                             item.addEventListener('click', function(e){
                                                 console.log(`Cliquei na alternativa: ${e.target.dataset.alternativa}`)
                                                 e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]

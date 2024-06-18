@@ -112,7 +112,7 @@ const wrapperDialogContent_2 = createElement('div', { class: 'wrapper-dialog-con
 const wrapperDialogContent_3 = createElement('div', { class: 'wrapper-dialog-content-recebida'})
 const wrapperDialogContent_4 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_5 = createElement('div', { class: 'wrapper-dialog-content-enviada video'})
-const wrapperDialogContent_6 = createElement('div', { class: 'wrapper-dialog-content'})
+const wrapperDialogContent_6 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_7 = createElement('div', { class: 'wrapper-dialog-content'})
 const wrapperDialogContent_8 = createElement('div', { class: 'wrapper-dialog-content'})
 const wrapperDialogContent_9 = createElement('div', { class: 'wrapper-dialog-content'})
@@ -736,9 +736,9 @@ arrDivs[6].classList.add('recebida')
                                         // Início da segunda mensagem - Fabi
                                         setTimeout(() => {
                                             rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 2 segundos
+                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
                                         }, 3000);
                                         setTimeout(() => {
-                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
                                             arrDivs[6].classList.remove('recebida')  // remove classe "enviada", para que o balão seja exibida à esquerda
                                             arrDivs[6].classList.add('enviada')    // e adiciona classe "recebida", para que o balão seja exibida à esquerda
                                             arrDivs[6].appendChild(svgSpinner)
@@ -748,7 +748,8 @@ arrDivs[6].classList.add('recebida')
                                             main.scrollTop += 1300;
                                             rightImg.src = "assets/chefe-idle.gif" // Pára personagem Selecione uma das opções abaixo: 
                                             //svgSpinnerAbertura.classList.toggle('hide')
-                                        }, 4000);
+                                            svgSpinner.style.opacity = 0
+                                        }, 5500);
                                         // Fim da primeira mensagem - Fabi                                   
                                                
 
@@ -776,7 +777,7 @@ arrDivs[6].classList.add('recebida')
                                             })
                                         })
 
-                                    }, 6500);
+                                    }, 7500);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 

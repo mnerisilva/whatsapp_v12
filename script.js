@@ -699,19 +699,32 @@ arrDivs[5].classList.add('enviada')
                                         //        _pergunta2(e)
                                                 e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
                                                 let alternativaEscolhida1_3 = e.target.dataset.alternativa
-                                                desabilitaOpcao(listenerPergunta1_3, alternativaEscolhida1_3)
+                                                //desabilitaOpcao(listenerPergunta1_3, alternativaEscolhida1_3)
 
-                                                pergunta1_3.classList.toggle('hide-pergunta')
 
-                               // OPÇÃO 1 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
-                               arrDivs[4].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
-                               arrDivs[4].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
-                               arrDivs[4].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
-                               arrDivs[4].querySelector('p').textContent = e.target.textContent // TEXTO DO BALÃO DE RESPOSTA TRAZIDO DO CLIQUE DA OPÇÃO 1 [Formatar o computador?]
-                               e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
-                               setTimeout(() => {
-                                   leftImg.src = "assets/func-digitando.gif" // personagem inicia digitação e espera 1 segundo
-                               }, 1000);                                                 
+
+
+                                     // OPÇÃO 1_2 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
+                                      arrDivs[5].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
+                                      arrDivs[5].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                                      arrDivs[5].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
+                                      arrDivs[5].querySelector('p').textContent = e.target.textContent // TEXTO DO BALÃO DE RESPOSTA TRAZIDO DO CLIQUE DA OPÇÃO 1 [Formatar o computador?]
+                                      e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                      setTimeout(() => {
+                                          leftImg.src = "assets/func-digitando.gif" // personagem inicia digitação e espera 1 segundo
+                                      }, 1000);                                                
+                                      setTimeout(() => {
+                                          e.target.parentNode.classList.toggle('hide-pergunta') // esconde box da pergunda e opções
+                                          svgSpinner.setAttribute('class', 'svg-spinner-direita') // ativa spinner à direita
+                                          main.style.overflowY = 'scroll' // exibe barra de rolagem eixo Y
+                                          main.appendChild(arrDivs[5]) // insere a div completa, com todos os ajustes, na área de digitação [main]  
+                                          arrDivs[5].querySelector('div').classList.remove('wrapper-dialog-content-enviada') // remove e adiciona classes - mudança de posição e fundo do balão [amarelo]
+                                          arrDivs[5].querySelector('div').classList.add('wrapper-dialog-content-recebida-resposta-pergunta') // remove e adiciona classes - mudança de posição e fundo do balão [amarelo]  
+                                          main.scrollTop += 1300; // posiciona barra de rolagem na base da área de mensagens    
+                                          leftImg.src = "assets/func-idle.gif" // para personagem da esquerda  
+                                      }, 2500);
+                                      // OPÇÃO 1 FOI ESCOLHIDA E RESPONDIDA - FIM
+                                               
 
 
 

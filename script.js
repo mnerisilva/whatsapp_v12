@@ -63,7 +63,7 @@ console.log(pergunta1_2)
 
 
 const headerPergunta1_3 = createElement('h5', { class: 'header-pergunta'})
-const pergunta1_3 = createElement('div', { class: 'pergunta pergunta3'})
+const pergunta1_3 = createElement('div', { class: 'pergunta pergunta1_3'})
 const p13_enunciado1 = createElement('h5', { class: 'enunciado enunciado1', 'data-alternativa': '1'})
 const p13_enunciado2 = createElement('h5', { class: 'enunciado enunciado2', 'data-alternativa': '2'})
 const p13_enunciado3 = createElement('h5', { class: 'enunciado enunciado3', 'data-alternativa': '3'})
@@ -641,18 +641,35 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
             // resposta 1
             console.log('cliquei na opção 1____')
 
+                                      // OPÇÃO 1 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
+                                      arrDivs[4].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
+                                      arrDivs[4].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                                      arrDivs[4].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
+                                      arrDivs[4].querySelector('p').textContent = e.target.textContent // TEXTO DO BALÃO DE RESPOSTA TRAZIDO DO CLIQUE DA OPÇÃO 1 [Formatar o computador?]
+                                      e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                      setTimeout(() => {
+                                          leftImg.src = "assets/func-digitando.gif" // personagem inicia digitação e espera 1 segundo
+                                      }, 0);                                                
+                                      setTimeout(() => {
+                                          e.target.parentNode.classList.toggle('hide-pergunta') // esconde box da pergunda e opções
+                                          svgSpinner.setAttribute('class', 'svg-spinner-direita') // ativa spinner à direita
+                                          main.style.overflowY = 'scroll' // exibe barra de rolagem eixo Y
+                                          main.appendChild(arrDivs[4]) // insere a div completa, com todos os ajustes, na área de digitação [main]  
+                                          arrDivs[4].querySelector('div').classList.remove('wrapper-dialog-content-enviada') // remove e adiciona classes - mudança de posição e fundo do balão [amarelo]
+                                          arrDivs[4].querySelector('div').classList.add('wrapper-dialog-content-recebida-resposta-pergunta') // remove e adiciona classes - mudança de posição e fundo do balão [amarelo]  
+                                          main.scrollTop += 1300; // posiciona barra de rolagem na base da área de mensagens    
+                                          leftImg.src = "assets/func-idle.gif" // para personagem da esquerda  
+                                      }, 500);
+                                      // OPÇÃO 1 FOI ESCOLHIDA E RESPONDIDA - FIM
 
 
 
-
-
-                                    pergunta1_2.style.opacity = .5
 
                                     // Início exibição da caixa com as opcões e o enunciado da pergunta 2
-                                    //setTimeout(() => {
+                                    setTimeout(() => {
                                         rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 7 segundos
-                                    //}, 5000);
-                                    //setTimeout(() => {
+                                    }, 2000);
+                                    setTimeout(() => {
                                         svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
                                         const h5ElementosDaPergunta1_3 = pergunta1_3.querySelectorAll('h5') 
                                         h5ElementosDaPergunta1_3[0].textContent = 'Opções:'
@@ -680,7 +697,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                         //    })
                                         //})
 
-                                    //}, 6500);
+                                    }, 3500);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 

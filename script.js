@@ -145,9 +145,13 @@ console.log(arrDivs[4])
 arrDivs[4].classList.toggle('recebida')
 arrDivs[4].classList.add('enviada')
 
-arrDivs[5].querySelector('p').style.display = 'none'
-const iframeVideo1 = createElement('iframe', { width: '420', height: '315', src: 'https://www.youtube.com/embed/gIOiyFVfl_8'})
-arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
+//arrDivs[5].querySelector('p').style.display = 'none'
+//const iframeVideo1 = createElement('iframe', { width: '420', height: '315', src: 'https://www.youtube.com/embed/gIOiyFVfl_8'})
+//arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
+
+console.log(arrDivs[5])
+arrDivs[5].classList.toggle('recebida')
+arrDivs[5].classList.add('enviada')
 
 
     main.innerHTML = main.innerHTML + `<div class="hide">HHHHHHHHHHHHHH</div>`
@@ -641,7 +645,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
             // resposta 1
             console.log('cliquei na opção 1____')
 
-                                      // OPÇÃO 1 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
+                                      // OPÇÃO 1_2 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
                                       arrDivs[4].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
                                       arrDivs[4].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
                                       arrDivs[4].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
@@ -649,7 +653,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                       e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
                                       setTimeout(() => {
                                           leftImg.src = "assets/func-digitando.gif" // personagem inicia digitação e espera 1 segundo
-                                      }, 0);                                                
+                                      }, 1000);                                                
                                       setTimeout(() => {
                                           e.target.parentNode.classList.toggle('hide-pergunta') // esconde box da pergunda e opções
                                           svgSpinner.setAttribute('class', 'svg-spinner-direita') // ativa spinner à direita
@@ -659,7 +663,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                           arrDivs[4].querySelector('div').classList.add('wrapper-dialog-content-recebida-resposta-pergunta') // remove e adiciona classes - mudança de posição e fundo do balão [amarelo]  
                                           main.scrollTop += 1300; // posiciona barra de rolagem na base da área de mensagens    
                                           leftImg.src = "assets/func-idle.gif" // para personagem da esquerda  
-                                      }, 500);
+                                      }, 2500);
                                       // OPÇÃO 1 FOI ESCOLHIDA E RESPONDIDA - FIM
 
 
@@ -668,7 +672,7 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                     // Início exibição da caixa com as opcões e o enunciado da pergunta 2
                                     setTimeout(() => {
                                         rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 7 segundos
-                                    }, 2000);
+                                    }, 4000);
                                     setTimeout(() => {
                                         svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
                                         const h5ElementosDaPergunta1_3 = pergunta1_3.querySelectorAll('h5') 
@@ -689,15 +693,51 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
 
                                          
                                         
-                                        //const listenerPergunta2 = main.querySelectorAll('.enunciado')
-                                        //listenerPergunta2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
-                                        //    item.addEventListener('click', function(e){
+                                        const listenerPergunta1_3 = main.querySelectorAll('.enunciado')
+                                        listenerPergunta1_3.forEach( item => { // Aplicando Listener nas opções da Pergunta2
+                                            item.addEventListener('click', function(e){
                                         //        _pergunta2(e)
-                                        //        e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
-                                        //    })
-                                        //})
+                                                e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                                let alternativaEscolhida1_3 = e.target.dataset.alternativa
+                                                desabilitaOpcao(listenerPergunta1_3, alternativaEscolhida1_3)
 
-                                    }, 3500);
+                                                pergunta1_3.classList.toggle('hide-pergunta')
+
+                               // OPÇÃO 1 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
+                               arrDivs[4].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
+                               arrDivs[4].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                               arrDivs[4].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
+                               arrDivs[4].querySelector('p').textContent = e.target.textContent // TEXTO DO BALÃO DE RESPOSTA TRAZIDO DO CLIQUE DA OPÇÃO 1 [Formatar o computador?]
+                               e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                               setTimeout(() => {
+                                   leftImg.src = "assets/func-digitando.gif" // personagem inicia digitação e espera 1 segundo
+                               }, 1000);                                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            })
+                                        })
+
+                                    }, 6500);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 
@@ -730,4 +770,16 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
         if(e.target.dataset.alternativa === 4){
             // resposta 1
         }
+    }
+
+
+
+
+
+    function desabilitaOpcao(opcoes, escolhida) {
+        opcoes.forEach((item) => {
+            console.log(`${item.dataset.alternativa}`)
+                item.classList.toggle('desabilita-opcao')
+        })
+        
     }

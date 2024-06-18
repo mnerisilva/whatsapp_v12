@@ -763,8 +763,9 @@ arrDivs[6].classList.add('recebida')
                                             arrDivs[7].classList.remove('recebida')  // remove classe "enviada", para que o balão seja exibida à esquerda
                                             arrDivs[7].classList.add('enviada')    // e adiciona classe "recebida", para que o balão seja exibida à esquerda
                                             arrDivs[7].appendChild(svgSpinner)
-                                            let textoDaMensagem = 'Para saber mais sobre Planejamento de Carreira, clique aqui.'
-                                            arrDivs[7].querySelector('p').textContent = textoDaMensagem
+                                            let textoDaMensagem = `Para saber mais sobre Planejamento de Carreira, <a href="https://google.com.br" target="_BLANK">clique aqui</a>.`
+                                            //arrDivs[7].querySelector('p').textContent = textoDaMensagem
+                                            arrDivs[7].querySelector('p').innerHTML = textoDaMensagem
                                             main.appendChild(arrDivs[7])    
                                             main.scrollTop += 1300;
                                             rightImg.src = "assets/chefe-idle.gif" // Pára personagem Selecione uma das opções abaixo: 

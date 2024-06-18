@@ -33,24 +33,55 @@ pergunta1.appendChild(p1_enunciado2)
 console.log(pergunta1)
 
 
-const headerPergunta2 = createElement('h5', { class: 'header-pergunta'})
-const pergunta2 = createElement('div', { class: 'pergunta pergunta2'})
-const p2_enunciado1 = createElement('h5', { class: 'enunciado enunciado1', 'data-alternativa': '1'})
-const p2_enunciado2 = createElement('h5', { class: 'enunciado enunciado2', 'data-alternativa': '2'})
-const p2_enunciado3 = createElement('h5', { class: 'enunciado enunciado3', 'data-alternativa': '3'})
-const p2_enunciado4 = createElement('h5', { class: 'enunciado enunciado4', 'data-alternativa': '4'})
-headerPergunta2.textContent = 'Opções:'
-p2_enunciado1.textContent = 'Aula 1 - Planejamento de Carreira'
-p2_enunciado2.textContent = 'Aula 2 - Introdução às funções da administração'
-p2_enunciado3.textContent = 'Aula 3 - A organização e a rotina do Assistente Administrativo'
-p2_enunciado4.textContent = 'Aula 4 - Atendimento ao cliente'
-pergunta2.appendChild(headerPergunta2)
-pergunta2.appendChild(p2_enunciado1)
-pergunta2.appendChild(p2_enunciado2)
-pergunta2.appendChild(p2_enunciado3)
-pergunta2.appendChild(p2_enunciado4)
 
-console.log(pergunta1)
+
+
+
+
+const headerPergunta1_2 = createElement('h5', { class: 'header-pergunta'})
+const pergunta1_2 = createElement('div', { class: 'pergunta pergunta1_2'})
+const p12_enunciado1 = createElement('h5', { class: 'enunciado enunciado1', 'data-alternativa': '1'})
+const p12_enunciado2 = createElement('h5', { class: 'enunciado enunciado2', 'data-alternativa': '2'})
+const p12_enunciado3 = createElement('h5', { class: 'enunciado enunciado3', 'data-alternativa': '3'})
+const p12_enunciado4 = createElement('h5', { class: 'enunciado enunciado4', 'data-alternativa': '4'})
+headerPergunta1_2.textContent = 'Opções:'
+p12_enunciado1.textContent = 'Aula 1 - Planejamento de Carreira'
+p12_enunciado2.textContent = 'Aula 2 - Introdução às funções da administração'
+p12_enunciado3.textContent = 'Aula 3 - A organização e a rotina do Assistente Administrativo'
+p12_enunciado4.textContent = 'Aula 4 - Atendimento ao cliente'
+pergunta1_2.appendChild(headerPergunta1_2)
+pergunta1_2.appendChild(p12_enunciado1)
+pergunta1_2.appendChild(p12_enunciado2)
+pergunta1_2.appendChild(p12_enunciado3)
+pergunta1_2.appendChild(p12_enunciado4)
+
+console.log(pergunta1_2)
+
+
+
+
+
+
+const headerPergunta1_3 = createElement('h5', { class: 'header-pergunta'})
+const pergunta1_3 = createElement('div', { class: 'pergunta pergunta3'})
+const p13_enunciado1 = createElement('h5', { class: 'enunciado enunciado1', 'data-alternativa': '1'})
+const p13_enunciado2 = createElement('h5', { class: 'enunciado enunciado2', 'data-alternativa': '2'})
+const p13_enunciado3 = createElement('h5', { class: 'enunciado enunciado3', 'data-alternativa': '3'})
+const p13_enunciado4 = createElement('h5', { class: 'enunciado enunciado4', 'data-alternativa': '4'})
+headerPergunta1_3.textContent = 'Opções:'
+p13_enunciado1.textContent = 'A importância de planejar a sua carreira'
+p13_enunciado2.textContent = 'Inserção no mercado de trabalho'
+p13_enunciado3.textContent = 'Elaboração de currículo'
+p13_enunciado4.textContent = 'Entrevista de emprego'
+pergunta1_3.appendChild(headerPergunta1_3)
+pergunta1_3.appendChild(p13_enunciado1)
+pergunta1_3.appendChild(p13_enunciado2)
+pergunta1_3.appendChild(p13_enunciado3)
+pergunta1_3.appendChild(p13_enunciado4) 
+
+ 
+
+console.log(pergunta1_3)
 
 
 for(let i=0;i<11; i++){
@@ -324,23 +355,23 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
                                     }, 3000);
                                     setTimeout(() => {
                                         svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
-                                        const h5ElementosDaPergunta2 = pergunta2.querySelectorAll('h5') 
-                                        h5ElementosDaPergunta2[0].textContent = 'Opções:'
-                                        h5ElementosDaPergunta2[1].textContent = 'Aula 1 - Planejamento de Carreira'
-                                        h5ElementosDaPergunta2[2].textContent = 'Aula 2 - Introdução às funções da administração'
-                                        h5ElementosDaPergunta2[3].textContent = 'Aula 3 - A organização e a rotina do Assistente Administrativo'
-                                        h5ElementosDaPergunta2[4].textContent = 'Aula 4 - Atendimento ao cliente'
+                                        const h5ElementosDaPergunta1_2 = pergunta1_2.querySelectorAll('h5') 
+                                        h5ElementosDaPergunta1_2[0].textContent = 'Opções:'
+                                        h5ElementosDaPergunta1_2[1].textContent = 'Aula 1 - Planejamento de Carreira'
+                                        h5ElementosDaPergunta1_2[2].textContent = 'Aula 2 - Introdução às funções da administração'
+                                        h5ElementosDaPergunta1_2[3].textContent = 'Aula 3 - A organização e a rotina do Assistente Administrativo'
+                                        h5ElementosDaPergunta1_2[4].textContent = 'Aula 4 - Atendimento ao cliente'
                                         pergunta1.appendChild(svgSpinner)
-                                        main.appendChild(pergunta2)     
+                                        main.appendChild(pergunta1_2)     
                                         main.scrollTop += 1300;
                                         rightImg.src = "assets/chefe-idle.gif" // para personagem
                                         
                                         
-                                        const listenerPergunta2 = main.querySelectorAll('.enunciado')
-                                        listenerPergunta2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
+                                        const listenerPergunta1_2 = main.querySelectorAll('.enunciado')
+                                        listenerPergunta1_2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
                                             item.addEventListener('click', function(e){
-                                                console.log(`Cliquei na alternativa: ${e.target.dataset.alternativa}`)
                                                 e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                                _pergunta1_2(e) // demembramento da pergunda 1_2 (terceiro nível da pergunta 1)
                                             })
                                         })
 
@@ -601,3 +632,85 @@ arrDivs[5].querySelector('.video').appendChild(iframeVideo1)
 
 
     */
+
+
+
+    function _pergunta1_2(e) {
+        console.log(`Cliquei na alternativa: ${e.target.dataset.alternativa}`)
+        if(e.target.dataset.alternativa === '1'){
+            // resposta 1
+            console.log('cliquei na opção 1____')
+
+
+
+
+
+
+                                    pergunta1_2.style.opacity = .5
+
+                                    // Início exibição da caixa com as opcões e o enunciado da pergunta 2
+                                    //setTimeout(() => {
+                                        rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 7 segundos
+                                    //}, 5000);
+                                    //setTimeout(() => {
+                                        svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
+                                        const h5ElementosDaPergunta1_3 = pergunta1_3.querySelectorAll('h5') 
+                                        h5ElementosDaPergunta1_3[0].textContent = 'Opções:'
+                                        h5ElementosDaPergunta1_3[1].textContent = 'A importância de planejar a sua carreira'
+                                        h5ElementosDaPergunta1_3[2].textContent = 'Inserção no mercado de trabalho'
+                                        h5ElementosDaPergunta1_3[3].textContent = 'Elaboração de currículo'
+                                        h5ElementosDaPergunta1_3[4].textContent = 'Entrevista de emprego'
+                                        pergunta1_3.appendChild(svgSpinner)
+                                        main.appendChild(pergunta1_3)     
+                                        main.scrollTop += 1300;
+                                        rightImg.src = "assets/chefe-idle.gif" // para personagem
+                                         
+
+                                         
+
+                                          
+
+                                         
+                                        
+                                        //const listenerPergunta2 = main.querySelectorAll('.enunciado')
+                                        //listenerPergunta2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
+                                        //    item.addEventListener('click', function(e){
+                                        //        _pergunta2(e)
+                                        //        e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                        //    })
+                                        //})
+
+                                    //}, 6500);
+                                    // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        if(e.target.dataset.alternativa === 2){
+            // resposta 1
+        }
+        if(e.target.dataset.alternativa === 3){
+            // resposta 1
+        }
+        if(e.target.dataset.alternativa === 4){
+            // resposta 1
+        }
+    }

@@ -153,6 +153,10 @@ console.log(arrDivs[5])
 arrDivs[5].classList.toggle('recebida')
 arrDivs[5].classList.add('enviada')
 
+console.log(arrDivs[6])
+arrDivs[6].classList.toggle('enviada')
+arrDivs[6].classList.add('recebida')
+
 
     main.innerHTML = main.innerHTML + `<div class="hide">HHHHHHHHHHHHHH</div>`
     main.innerHTML = main.innerHTML + `<div class="hide">HHHHHHHHHHHHHH</div>`
@@ -704,7 +708,7 @@ arrDivs[5].classList.add('enviada')
 
 
 
-                                     // OPÇÃO 1_2 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
+                                     // OPÇÃO 1_3 FOI A ESCOLHIDA - MUDA COR DO BALÃO PARA AMARELO - PERSONAGEM DA ESQUERDA INICIA DIGITAÇÃO [RESPONDENDO À PERGUNTA - LÉO] - INÍCIO
                                       arrDivs[5].classList.remove('enviada') // remove classe "enviada", para que o balão seja exibida à esquerda
                                       arrDivs[5].classList.add('recebida') // e adiciona classe "recebida", para que o balão seja exibida à esquerda
                                       arrDivs[5].querySelector('p').style.backgroundColor = 'cornsilk' // muda cor do balão
@@ -724,6 +728,28 @@ arrDivs[5].classList.add('enviada')
                                           leftImg.src = "assets/func-idle.gif" // para personagem da esquerda  
                                       }, 2500);
                                       // OPÇÃO 1 FOI ESCOLHIDA E RESPONDIDA - FIM
+
+
+
+
+
+                                        // Início da segunda mensagem - Fabi
+                                        setTimeout(() => {
+                                            rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 2 segundos
+                                        }, 3000);
+                                        setTimeout(() => {
+                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
+                                            arrDivs[6].classList.remove('recebida')  // remove classe "enviada", para que o balão seja exibida à esquerda
+                                            arrDivs[6].classList.add('enviada')    // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                                            arrDivs[6].appendChild(svgSpinner)
+                                            let textoDaMensagem = 'Um plano de carreira precisa ser realizado cuidadosamente, com o intuito de aumentar as chances de sucesso do profissional. No entanto, para quem é novo no mercado de trabalho e ainda não sabe em que área gostaria de atuar, algumas estratégias (como descoberta de interesses, aptidões, habilidades, estilo de vida desejado e experiências diversas) podem ser usadas para ajudar a tomar uma decisão. '
+                                            arrDivs[6].querySelector('p').textContent = textoDaMensagem
+                                            main.appendChild(arrDivs[6])    
+                                            main.scrollTop += 1300;
+                                            rightImg.src = "assets/chefe-idle.gif" // Pára personagem Selecione uma das opções abaixo: 
+                                            //svgSpinnerAbertura.classList.toggle('hide')
+                                        }, 4000);
+                                        // Fim da primeira mensagem - Fabi                                   
                                                
 
 

@@ -113,7 +113,7 @@ const wrapperDialogContent_3 = createElement('div', { class: 'wrapper-dialog-con
 const wrapperDialogContent_4 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_5 = createElement('div', { class: 'wrapper-dialog-content-enviada video'})
 const wrapperDialogContent_6 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
-const wrapperDialogContent_7 = createElement('div', { class: 'wrapper-dialog-content'})
+const wrapperDialogContent_7 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_8 = createElement('div', { class: 'wrapper-dialog-content'})
 const wrapperDialogContent_9 = createElement('div', { class: 'wrapper-dialog-content'})
 const wrapperDialogContent_10 = createElement('div', { class: 'wrapper-dialog-content'})
@@ -750,7 +750,28 @@ arrDivs[6].classList.add('recebida')
                                             //svgSpinnerAbertura.classList.toggle('hide')
                                             svgSpinner.style.opacity = 0
                                         }, 5500);
-                                        // Fim da primeira mensagem - Fabi                                   
+                                        // Fim da primeira mensagem - Fabi       
+                                        
+                                        
+
+                                        // Início da segunda mensagem - Fabi
+                                        setTimeout(() => {
+                                            rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 2 segundos
+                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
+                                        }, 7000);
+                                        setTimeout(() => {
+                                            arrDivs[7].classList.remove('recebida')  // remove classe "enviada", para que o balão seja exibida à esquerda
+                                            arrDivs[7].classList.add('enviada')    // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                                            arrDivs[7].appendChild(svgSpinner)
+                                            let textoDaMensagem = 'Para saber mais sobre Planejamento de Carreira, clique aqui.'
+                                            arrDivs[7].querySelector('p').textContent = textoDaMensagem
+                                            main.appendChild(arrDivs[7])    
+                                            main.scrollTop += 1300;
+                                            rightImg.src = "assets/chefe-idle.gif" // Pára personagem Selecione uma das opções abaixo: 
+                                            //svgSpinnerAbertura.classList.toggle('hide')
+                                            svgSpinner.style.opacity = 0
+                                        }, 9500);
+                                        // Fim da primeira mensagem - Fabi                                         
                                                
 
 
@@ -777,7 +798,7 @@ arrDivs[6].classList.add('recebida')
                                             })
                                         })
 
-                                    }, 7500);
+                                    }, 11000);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 

@@ -84,6 +84,27 @@ pergunta1_3.appendChild(p13_enunciado4)
 console.log(pergunta1_3)
 
 
+
+
+
+
+
+const headerPergunta1_4 = createElement('h5', { class: 'header-pergunta'})
+const pergunta1_4 = createElement('div', { class: 'pergunta pergunta1_4'})
+const p14_enunciado1 = createElement('h5', { class: 'enunciado enunciado1', 'data-alternativa': '1'})
+const p14_enunciado2 = createElement('h5', { class: 'enunciado enunciado2', 'data-alternativa': '2'})
+headerPergunta1_4.textContent = 'Opções:'
+p14_enunciado1.textContent = 'A importância de planejar a sua carreira'
+p14_enunciado2.textContent = 'Inserção no mercado de trabalho'
+pergunta1_4.appendChild(headerPergunta1_4)
+pergunta1_4.appendChild(p14_enunciado1)
+pergunta1_4.appendChild(p14_enunciado2)
+
+ 
+
+console.log(pergunta1_4)
+
+
 for(let i=0;i<11; i++){
     let classeDePosicionamentoDoBalao = ( i % 2) ? 'mensagem enviada' : 'mensagem recebida'   
     arrDivs.push(createElement('div', { class: classeDePosicionamentoDoBalao })) 
@@ -114,7 +135,7 @@ const wrapperDialogContent_4 = createElement('div', { class: 'wrapper-dialog-con
 const wrapperDialogContent_5 = createElement('div', { class: 'wrapper-dialog-content-enviada video'})
 const wrapperDialogContent_6 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_7 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
-const wrapperDialogContent_8 = createElement('div', { class: 'wrapper-dialog-content'})
+const wrapperDialogContent_8 = createElement('div', { class: 'wrapper-dialog-content-enviada'})
 const wrapperDialogContent_9 = createElement('div', { class: 'wrapper-dialog-content'})
 const wrapperDialogContent_10 = createElement('div', { class: 'wrapper-dialog-content'})
 
@@ -776,14 +797,46 @@ arrDivs[6].classList.add('recebida')
                                                
 
 
+                                        // Início da segunda mensagem - Fabi
+                                        setTimeout(() => {
+                                            rightImg.src = "assets/chefe-digitando.gif" // Fabi digitando - aguarda 2 segundos
+                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
+                                        }, 11000);
+                                        setTimeout(() => {
+                                            arrDivs[8].classList.remove('recebida')  // remove classe "enviada", para que o balão seja exibida à esquerda
+                                            arrDivs[8].classList.add('enviada')    // e adiciona classe "recebida", para que o balão seja exibida à esquerda
+                                            arrDivs[8].appendChild(svgSpinner)
+                                            let textoDaMensagem = `Gostaria de saber mais alguma coisa?`
+                                            arrDivs[8].querySelector('p').innerHTML = textoDaMensagem
+                                            main.appendChild(arrDivs[8])    
+                                            main.scrollTop += 1300;
+                                            rightImg.src = "assets/chefe-idle.gif" // Pára personagem Selecione uma das opções abaixo: 
+                                            //svgSpinnerAbertura.classList.toggle('hide')
+                                            svgSpinner.style.opacity = 0
+                                        }, 12000);
+                                        // Fim da primeira mensagem - Fabi  
 
 
 
 
 
 
-
-
+                                        // Início exibição da caixa com as opcões e o enunciado da primeira pergunta 1
+                                        setTimeout(() => {
+                                            rightImg.src = "assets/chefe-digitando.gif" // animação Fabi digitando - aguarda 7 segundos
+                                        }, 14000);
+                                        setTimeout(() => {
+                                            svgSpinner.setAttribute('class', 'svg-spinner-direita') // spinner sendo exibido na direita
+                                            const h5ElementosDaPergunta1_4 = pergunta1_4.querySelectorAll('h5')                
+                                            h5ElementosDaPergunta1_4[0].textContent = 'Opções:'
+                                            h5ElementosDaPergunta1_4[1].textContent = 'Sim'
+                                            h5ElementosDaPergunta1_4[2].textContent = 'Não?'
+                                            pergunta1_4.appendChild(svgSpinner)
+                                            main.appendChild(pergunta1_4)    
+                                            main.scrollTop += 1300;
+                                            rightImg.src = "assets/chefe-idle.gif" // personagem parado  
+                                        }, 16000);
+                                        // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 
 
@@ -799,7 +852,7 @@ arrDivs[6].classList.add('recebida')
                                             })
                                         })
 
-                                    }, 11000);
+                                    }, 18000);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 

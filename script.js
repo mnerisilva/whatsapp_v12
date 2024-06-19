@@ -341,7 +341,7 @@ arrDivs[6].classList.add('recebida')
             // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
                     setTimeout(() => { // executa este bloco a partir do segundo 9000 - BLOCO ATRELADO À PERGUNTA 1
-                        const listenerPergunta1 = main.querySelectorAll('.enunciado')
+                        const listenerPergunta1 = pergunta1.querySelectorAll('.enunciado')
                         listenerPergunta1.forEach( item => {
                             item.addEventListener('click', function(e){
                                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -396,7 +396,7 @@ arrDivs[6].classList.add('recebida')
                                         rightImg.src = "assets/chefe-idle.gif" // para personagem
                                         
                                         
-                                        const listenerPergunta1_2 = main.querySelectorAll('.enunciado')
+                                        const listenerPergunta1_2 = pergunta1_2.querySelectorAll('.enunciado')
                                         listenerPergunta1_2.forEach( item => { // Aplicando Listener nas opções da Pergunta2
                                             item.addEventListener('click', function(e){
                                                 e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]

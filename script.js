@@ -718,7 +718,7 @@ arrDivs[6].classList.add('recebida')
 
                                          
                                         
-                                        const listenerPergunta1_3 = main.querySelectorAll('.enunciado')
+                                        const listenerPergunta1_3 = pergunta1_3.querySelectorAll('.enunciado')
                                         listenerPergunta1_3.forEach( item => { // Aplicando Listener nas opções da Pergunta2
                                             item.addEventListener('click', function(e){
                                         //        _pergunta2(e)
@@ -834,7 +834,17 @@ arrDivs[6].classList.add('recebida')
                                             pergunta1_4.appendChild(svgSpinner)
                                             main.appendChild(pergunta1_4)    
                                             main.scrollTop += 1300;
-                                            rightImg.src = "assets/chefe-idle.gif" // personagem parado  
+                                            rightImg.src = "assets/chefe-idle.gif" // personagem parado
+                                            //
+                                            const listenerPergunta1_4 = pergunta1_4.querySelectorAll('.enunciado')
+                                            listenerPergunta1_4.forEach( item => { // Aplicando Listener nas opções da Pergunta2
+                                                item.addEventListener('click', function(e){
+                                                    e.target.classList.add('active') // grifa fundo em amarelo "forte" para sinalizar qual opção foi clicada [classe active]
+                                                    let alternativaEscolhida1_4 = e.target.dataset.alternativa
+                                                    //desabilitaOpcao(listenerPergunta1_3, alternativaEscolhida1_3)
+                                                    console.log('Cliquei nas opções Sim?/Não?')
+                                                })
+                                            })
                                         }, 16000);
                                         // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
@@ -852,7 +862,7 @@ arrDivs[6].classList.add('recebida')
                                             })
                                         })
 
-                                    }, 18000);
+                                    }, 5000);
                                     // Fim exibição da caixa que exibe as opcões e o enunciado da primeira pergunta
 
 
